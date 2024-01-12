@@ -261,7 +261,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="col-lg-4 col-md-6" >
-                  <div data-aos="fade-up" data-aos-duration="1000">
+                  <div data-aos="fade-down" data-aos-duration="1000">
                     <div className="item mb-30">
                       <img src={antd} alt="" style={{ height: '70px', width: '80px', marginBottom: '30px' }} />
                       <h6>Ant Design</h6>
