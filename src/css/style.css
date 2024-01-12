@@ -960,6 +960,11 @@ span, a, a:hover {
   float: right;
 }
 
+/* .carousel{
+  box-shadow: 5px 10px #888888;
+  height: 600px;
+} */
+
 /* ----------------------------------------------------------------
      [ End Blog ]
 -----------------------------------------------------------------*/
@@ -1077,7 +1082,7 @@ footer .copy p {
   .navbar .navbar-collapse {
     max-height: 340px;
     overflow: auto;
-    background: #111;
+    background: #cc1010;
     text-align: center;
     padding: 10px 0;
   }

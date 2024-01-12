@@ -7,15 +7,25 @@ import "../css/bootstrap.min.css";
 import Header from "../Partial/Header";
 import { ToastContainer, toast } from "react-toastify";
 import Collapse from "react-collapse";
-import img1 from "./../Assets/Images/img1.png";
-import img2 from "./../Assets/Images/img2.jpg";
+import { Carousel } from 'antd';
+import crm1 from "./../Assets/Images/crm1.png";
+import crm2 from "./../Assets/Images/crm2.png";
+import crm3 from "./../Assets/Images/crm3.png";
+import crm4 from "./../Assets/Images/crm4.png";
 import adii from "./../Assets/Images/adi.png";
 import react from "./../Assets/Images/react.png";
 import reduxLogo from "./../Assets/Images/redux.png";
 import tailwind from "./../Assets/Images/tailwind.png";
+import antd from "../Assets/Images/antd.png"
 
-
-
+const contentStyle = {
+  margin: 0,
+  height: '160px',
+  color: '#fff',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#364d79',
+};
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState({
@@ -58,42 +68,34 @@ const Home = () => {
     setActiveFilter(item.filterValue);
   };
 
-  const proficiencies = [
-    {
-      image: react,
-      heading: "React.js",
-      paragraph: `As a React developer, I specialize in crafting dynamic and responsive user interfaces. Leveraging the power of React's component-based architecture, I create scalable and efficient web applications that deliver exceptional user experiences.`,
-    },
+  const onChange = (currentSlide) => {
+    console.log(currentSlide);
+  };
 
-    {
-      image: reduxLogo,
-      heading: "Redux",
-      paragraph: `In my role as a Redux enthusiast, I excel in managing the state of complex React applications with clarity and efficiency. Leveraging Redux's centralized state management, I ensure seamless data flow, enabling scalable and maintainable front-end architectures.`,
-    },
+  // const proficiencies = [
+  //   {
+  //     image: react,
+  //     heading: "React.js",
+  //     paragraph: `As a React developer, I specialize in crafting dynamic and responsive user interfaces. Leveraging the power of React's component-based architecture, I create scalable and efficient web applications that deliver exceptional user experiences.`,
+  //   },
 
-    {
-      image: tailwind,
-      heading: "Tailwind",
-      paragraph: `As a Tailwind CSS aficionado, I specialize in crafting stylish and responsive web designs with unparalleled speed. Leveraging Tailwind's utility-first approach, I streamline the styling process, ensuring clean and maintainable code that brings modern aesthetics to every project.`,
-    },
-    {
-      image: react,
-      heading: "React.js",
-      paragraph: `As a React developer, I specialize in crafting dynamic and responsive user interfaces. Leveraging the power of React's component-based architecture, I create scalable and efficient web applications that deliver exceptional user experiences.`,
-    },
+  //   {
+  //     image: reduxLogo,
+  //     heading: "Redux",
+  //     paragraph: `In my role as a Redux enthusiast, I excel in managing the state of complex React applications with clarity and efficiency. Leveraging Redux's centralized state management, I ensure seamless data flow, enabling scalable and maintainable front-end architectures.`,
+  //   },
 
-    {
-      image: react,
-      heading: "React.js",
-      paragraph: `As a React developer, I specialize in crafting dynamic and responsive user interfaces. Leveraging the power of React's component-based architecture, I create scalable and efficient web applications that deliver exceptional user experiences.`,
-    },
-
-    {
-      image: react,
-      heading: "React.js",
-      paragraph: `As a React developer, I specialize in crafting dynamic and responsive user interfaces. Leveraging the power of React's component-based architecture, I create scalable and efficient web applications that deliver exceptional user experiences.`,
-    },
-  ]
+  //   {
+  //     image: tailwind,
+  //     heading: "Tailwind",
+  //     paragraph: `As a Tailwind CSS aficionado, I specialize in crafting stylish and responsive web designs with unparalleled speed. Leveraging Tailwind's utility-first approach, I streamline the styling process, ensuring clean and maintainable code that brings modern aesthetics to every project.`,
+  //   },
+  //   {
+  //     image: antd,
+  //     heading: "Ant Design",
+  //     paragraph: `In my role as an Ant Design enthusiast, I harness the power of this comprehensive design system to create polished and user-friendly interfaces. With a vast array of pre-built React components, Ant Design expedites development, allowing me to focus on delivering visually appealing and highly functional web applications.`,
+  //   },
+  // ]
 
   return (
     <>
@@ -102,7 +104,7 @@ const Home = () => {
         <Element name="/" className="element">
           <Header />
         </Element>
-        
+
         {/* End Navbar ====
     	======================================= */}
         {/* =====================================
@@ -140,7 +142,7 @@ const Home = () => {
                 />
 
                 <p className=" font-bold  ">
-                "Crafting seamless user experiences through innovative front-end development to bring digital visions to life."
+                  "Crafting seamless user experiences through innovative front-end development to bring digital visions to life."
                 </p>
                 <div className="social mt-15">
                   <a href="https://www.facebook.com/syedadilahmed.k" className="icon">
@@ -164,7 +166,7 @@ const Home = () => {
         <section className="hero section-padding" data-scroll-index={1}>
           <div className="container">
             <div className="row">
-              <div className="col-lg-5"  data-aos="fade-right" data-aos-duration="2000">
+              <div className="col-lg-5" data-aos="fade-right" data-aos-duration="2000">
                 <div className="hero-img mb-md50">
                   <div className="img">
                     <img src={adii} alt="" />
@@ -172,15 +174,15 @@ const Home = () => {
                 </div>
               </div>
               <div className="col-lg-7">
-                <Element name="about" className="element "  data-aos="fade-left" data-aos-duration="2000">
+                <Element name="about" className="element " data-aos="fade-left" data-aos-duration="2000">
                   <div className="content" >
                     <h3 className="">About Me</h3>
                     <span>I am Web Developer</span>
                     <p className="mb-10">
-                    "Hello, I'm Syed Adil, and I'm passionate about the digital world. Front-end web development is where I channel my creativity and technical skills to craft captivating online experiences. As a front-end developer, I specialize in bringing websites to life by blending design and technology. Using languages like HTML, CSS, and JavaScript and libraries like React JS".
+                      "Hello, I'm Syed Adil, and I'm passionate about the digital world. Front-end web development is where I channel my creativity and technical skills to craft captivating online experiences. As a front-end developer, I specialize in bringing websites to life by blending design and technology. Using languages like HTML, CSS, and JavaScript and libraries like React JS".
                     </p>
                     <p>
-                    "I meticulously construct the visual and interactive elements that users directly engage with. From the layout and color schemes to the responsive design that adapts seamlessly to all devices, my role is to ensure that every user enjoys a smooth and visually pleasing journey. Collaborating closely with designers, I transform concepts into reality, adding functionalities that enhance usability. With each line of code, I aim to create not just websites, but immersive digital landscapes that leave a lasting impression. Join me in exploring the dynamic realm of front-end web development, where creativity meets innovation."
+                      "I meticulously construct the visual and interactive elements that users directly engage with. From the layout and color schemes to the responsive design that adapts seamlessly to all devices, my role is to ensure that every user enjoys a smooth and visually pleasing journey. Collaborating closely with designers, I transform concepts into reality, adding functionalities that enhance usability. With each line of code, I aim to create not just websites, but immersive digital landscapes that leave a lasting impression. Join me in exploring the dynamic realm of front-end web development, where creativity meets innovation."
                     </p>
                     <div className="skills mt-30">
                       <div className="skill-item">
@@ -212,32 +214,81 @@ const Home = () => {
         >
           <Element name="skills" className="element">
 
-          <div className="container">
-            <div className="row">
-              <div className="section-head text-center col-lg-12">
-                <h3>Skills</h3>
-                <span>
-                  <i />
-                  <i />
-                  <i />
-                </span>
-              </div>
-             {
-              proficiencies.map((items)=> (
-                <>
-                 <div className="col-lg-4 col-md-6">
-                <div className="item mb-30">
-                  <img src={items.image} alt="" style={{height: '70px', width: '80px', marginBottom: '30px'}}/>
-                  <h6>{items.heading}</h6>
-                  <p>
-                   {items.paragraph}
-                  </p>
+            <div className="container">
+              <div className="row">
+                <div className="section-head text-center col-lg-12">
+                  <h3>Skills</h3>
+                  <span>
+                    <i />
+                    <i />
+                    <i />
+                  </span>
                 </div>
-              </div></>
-              ))
-             }
+                <div className="col-lg-4 col-md-6" >
+                  <div data-aos="fade-up" data-aos-duration="1000">
+                    <div className="item mb-30">
+
+                      <img src={react} alt="" style={{ height: '70px', width: '80px', marginBottom: '30px' }} />
+                      <h6>React JS</h6>
+                      <p>
+                        As a React developer, I specialize in crafting dynamic and responsive user interfaces. Leveraging the power of React's component-based architecture, I create scalable and efficient web applications that deliver exceptional user experiences.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-4 col-md-6" >
+                  <div data-aos="fade-down" data-aos-duration="1000">
+                    <div className="item mb-30">
+
+                      <img src={reduxLogo} alt="" style={{ height: '70px', width: '80px', marginBottom: '30px' }} />
+                      <h6>Redux</h6>
+                      <p>
+                        In my role as a Redux enthusiast, I excel in managing the state of complex React applications with clarity and efficiency. Leveraging Redux's centralized state management, I ensure seamless data flow, enabling scalable and maintainable front-end architectures.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-4 col-md-6" >
+                  <div data-aos="fade-up" data-aos-duration="1000">
+                    <div className="item mb-30">
+
+                      <img src={tailwind} alt="" style={{ height: '70px', width: '80px', marginBottom: '30px' }} />
+                      <h6>Tailwind</h6>
+                      <p>
+                        As a Tailwind CSS aficionado, I specialize in crafting stylish and responsive web designs with unparalleled speed. Leveraging Tailwind's utility-first approach, I streamline the styling process, ensuring clean and maintainable code that brings modern aesthetics to every project.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-4 col-md-6" >
+                  <div data-aos="fade-up" data-aos-duration="1000">
+                    <div className="item mb-30">
+                      <img src={antd} alt="" style={{ height: '70px', width: '80px', marginBottom: '30px' }} />
+                      <h6>Ant Design</h6>
+                      <p>
+                        In my role as an Ant Design enthusiast, I harness the power of this comprehensive design system to create polished and user-friendly interfaces. With a vast array of pre-built React components, Ant Design expedites development, allowing me to focus on delivering visually appealing and highly functional web applications.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* {
+                  proficiencies.map((items) => (
+                    <>
+                      <div className="col-lg-4 col-md-6" >
+                        <div className="item mb-30">
+
+                          <img src={items.image} alt="" style={{ height: '70px', width: '80px', marginBottom: '30px' }} />
+                          <h6>{items.heading}</h6>
+                          <p>
+                            {items.paragraph}
+                          </p>
+                        </div>
+                      </div>
+                    </>
+                  ))
+                } */}
+              </div>
             </div>
-          </div>
           </Element>
         </section>
         {/* End Services ====
@@ -283,17 +334,31 @@ const Home = () => {
                 </div>
                 <Collapse isOpened={isOpen?.open1}>
                   <div className="gallery text-center full-width">
-                    <div className="grid grid-cols-4 gap-4 items web">
-                      <div className="item-img">
-                        <img src={img1} alt="image" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items web">
+                      <div className="item-img"
+                        style={{
+                          boxShadow: "0px 1px 8px 8px rgba(0, 0, 0, 0.1)",
+                        }}>
+                        <Carousel autoplay
+                        >
+                          <div>
+                            <img src={crm1} alt="" />
+                          </div>
+                          <div>
+                            <img src={crm2} alt="" />
+                          </div>
+                          <div>
+                            <img src={crm3} alt="" />
+                          </div>
+                          <div>
+                            <img src={crm4} alt="" />
+                          </div>
+                        </Carousel>
 
                         <div className="item-img-overlay valign">
                           <div className="overlay-info full-width vertical-center">
                             <h6>Crearive Design</h6>
-                            <a href="" className="popimg">
-                              <span className="icon ti-zoom-in" />
-                            </a>
-                            <a href="#0">
+                            <a href="https://my-crm-psi.vercel.app/" target="blank">
                               <span className="icon ti-link" />
                             </a>
                           </div>
@@ -303,13 +368,14 @@ const Home = () => {
 
                     <div className="clearfix" />
                   </div>
+
                 </Collapse>
 
                 <Collapse isOpened={isOpen?.open2}>
                   <div className="gallery text-center full-width">
                     <div className="grid grid-cols-4 gap-4 items web">
                       <div className="item-img">
-                        <img src={img2} alt="image" />
+                        {/* <img src={img2} alt="image" /> */}
 
                         <div className="item-img-overlay valign">
                           <div className="overlay-info full-width vertical-center">
@@ -340,7 +406,7 @@ const Home = () => {
 
         {/* End Blog ====
   ======================================= */}
-  
+
         {/* =====================================
   ==== Start Footer */}
         <footer data-overlay-dark={9}>
